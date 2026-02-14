@@ -5,64 +5,64 @@
 
 const QUESTIONS = [
   {
-    img: "img/01.jpg",
+    img: "img/WhatsApp Image 2026-02-14 at 19.26.17.jpeg",
     q: "Chi ha sempre ragione?",
     options: [
-      "Simone. (ti ringrazio ma non ci sta bisogno di mentire)",
-      "Martina. Fine. Stop. Sentenza definitiva",
-      "Nessuno: abbiamo ragione a turno (ma Simone di più)",
-      "Entrambi: la ragione cambia proprietario finché non arriva un bacio"
+      "Il gatto nero (quello grande)",
+      "C'è da chiederlo? Federica.",
+      "Il gatto bianco e rosso",
+      "Tutti i gatti in foto"
     ],
     correctIndex: 1,
     note: "Ovviamente hai ragione..."
   },
   {
-    img: "img/02.jpg",
+    img: "img/WhatsApp Image 2026-02-14 at 19.26.18.jpeg",
     q: "È vero che sei spesso in ritardo… tranne quando?",
     options: [
-      "Quando c'è da dormire",
+      "Quando gioca la Juve",
       "Quando c'è da mangiare",
-      "Quando devi aprirmi la porta per la moto",
-      "Mai, sono puntualissima"
-    ],
-    correctIndex: 2,
-    note: "E ti apprezzo un sacco per questo 🫶"
-  },
-  {
-    img: "img/03.jpg",
-    q: "Alle 6 di mattina cosa succede di solito",
-    options: [
-      "Io ronfo alla grande",
-      "Tu hai già fatto 12 cose diverse",
-      "Io cerco il cuscino mentre tu cerchi obiettivi",
-      "Tutte le risposte precedenti"
+      "Quando c'è Glutei e Addome",
+      "Mai, sono sono sempre in ritardo"
     ],
     correctIndex: 3,
-    note: "La prova che gli opposti si attraggono 💞"
+    note: "Ma non ti lasceremmo mai a piedi, comunque..."
+  },
+  {
+    img: "img/WhatsApp Image 2026-02-14 at 19.40.33.jpeg",
+    q: "Se potessi viaggiare ovunque, dove andresti?",
+    options: [
+      "A fan***o",
+      "A Lourdes (la speranza è l'ultima a morire)",
+      "Al museo dei capelli in Turchia, ad Avanos",
+      "Nel deserto in Giordania"
+    ],
+    correctIndex: 1,
+    note: "Ci stiamo informando per lo sconto di gruppo 😉"
   },
 {
-    img: "img/04.jpg",
-    q: "Chi è il più testardo tra noi due?",
+    img: "img/WhatsApp Image 2026-02-14 at 19.26.19.jpeg",
+    q: "Il motivo più probabile per cui potrebbero arrestarti?",
     options: [
-      "Martina (ma solo per principio )",
-      "Simone (ma perché hai sempre ragione )",
-      "Dipende dal giorno: a turni, come le coppie serie",
-      "Entrambi... siamo solo due teste dure innamorate"
+      "Per aver esagerato con la 'nduja",
+      "Per aver scattato troppe foto al mare",
+      "Per aver fatto una maxi truffa su Vinted",
+      "Tutte le precedenti, dipende da quanto è severa la polizia"
     ],
     correctIndex: 3,
-    note: "Due teste dure, un solo cuore 💘"
+    note: "ni no ni no ni no... 👮"
   },
   {
-    img: "img/05.jpg",
-    q: "Chi ha più pazienza tra noi due?",
+    img: "img/WhatsApp Image 2026-02-14 at 20.01.08.jpeg",
+    q: "Per i tuoi 30 anni, ti auguriamo...",
     options: [
-      "Simone (se non è stanco)",
-      "Martina (ma solo quando lo decide lei)",
-      "Pareggio, ci bilanciamo",
-      "Nessuna di queste"
+      "Di diventare ricca",
+      "Di trovare l'amore",
+      "Di essere sempre felice",
+      "Tutte le precedenti, e anche di più"
     ],
-    correctIndex: 0,
-    note: "Zen certificato, salvo colpi di sonno 💤"
+    correctIndex: 3,
+    note: "E noi ci saremo per festeggiare ogni tuo successo! 🎉"
   }
 ];
 
@@ -113,10 +113,11 @@ function showFinalScreen() {
 
   const total = QUESTIONS.length;
 
-  const msg = "Buon San Valentino amore💘"
+    const msg = "SORPRESA!!!! Hai vinto un buono regalo della Rinascente!🎁 Tanti auguri da Valeria, Simone, Michelle, Daniele, Giovanni 🎂";
 
-  els.endText.textContent = `${msg}\n\nPunteggio: ${score}/${total}\n\nSorpresa: Hai vinto fuga in SPA con accompagnatore personale`;
+  els.endText.textContent = `${msg}\n\nPunteggio: ${score}/${total} `;
   els.end.classList.remove("hidden");
+
 }
 
 function moveRunawayButton() {
@@ -232,7 +233,7 @@ function paintAnswered(clickedIndex = null) {
   els.feedback.classList.add(isCorrect ? "good" : "bad");
   els.feedback.textContent = isCorrect
     ? `Giusto! ${item.note ?? ""}`.trim()
-    : `Nope 😄 Risposta giusta: "${item.options[item.correctIndex]}".`;
+    : `Sbagliato 😄 Risposta giusta: "${item.options[item.correctIndex]}".`;
 }
 
 // -----------------------
@@ -268,7 +269,7 @@ els.loveNo.addEventListener("mouseenter", moveRunawayButton);
 els.loveNo.addEventListener("mousemove", moveRunawayButton);
 
 els.loveYes.addEventListener("click", () => {
-  els.loveMsg.textContent = "Questo perchè me lo avevi chiesto";
+  els.loveMsg.textContent = "Indovina!!!!";
   setTimeout(() => {
     hideLovePopup();
     showFinalScreen();
